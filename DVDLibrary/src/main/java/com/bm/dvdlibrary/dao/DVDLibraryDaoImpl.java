@@ -81,7 +81,7 @@ public class DVDLibraryDaoImpl implements DVDLibraryDao {
                 note = record[8];
             }
             dvdToAdd.setNote(note);
-            
+
             titleDVDMap.put(title, dvdToAdd);
         }
         
