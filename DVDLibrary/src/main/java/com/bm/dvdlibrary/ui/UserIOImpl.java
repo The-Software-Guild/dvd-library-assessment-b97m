@@ -8,6 +8,7 @@
 package com.bm.dvdlibrary.ui;
 
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /**
  * An implementation of the UserIO interface
@@ -15,10 +16,15 @@ import java.util.Scanner;
  * 
  * @author Benjamin Munoz
  */
+@Component
 public class UserIOImpl implements UserIO {
 
     private Scanner uInput;
 
+    public UserIOImpl() {
+        this(new Scanner(System.in));
+    }
+    
     /**
      * Constructs a new instance of this class
      * using a Scanner to the console

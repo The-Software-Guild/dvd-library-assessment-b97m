@@ -13,12 +13,15 @@ import com.bm.dvdlibrary.dao.DVDLibraryDaoException;
 import com.bm.dvdlibrary.dto.DVD;
 import com.bm.dvdlibrary.ui.DVDLibraryView;
 import java.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Acts as the controller for this whole application
  * 
  * @author Benjamin Munoz
  */
+@Component("dvdLibraryController")
 public class DVDLibraryController {
     private DVDLibraryDao dao;
     private DVDLibraryView view;
@@ -29,6 +32,7 @@ public class DVDLibraryController {
      * @param dao
      * @param view 
      */
+    @Autowired
     public DVDLibraryController(DVDLibraryDao dao, DVDLibraryView view) {
         this.dao = dao;
         this.view = view;

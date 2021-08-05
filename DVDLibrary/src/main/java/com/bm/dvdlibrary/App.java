@@ -14,6 +14,7 @@ import com.bm.dvdlibrary.dao.DVDLibraryDaoImpl;
 import com.bm.dvdlibrary.ui.DVDLibraryView;
 import com.bm.dvdlibrary.ui.UserIOImpl;
 import java.util.Scanner;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Acts as the starting point of the whole application
@@ -21,12 +22,20 @@ import java.util.Scanner;
  */
 public class App {
     public static void main(String[] args) {
+        /*
         DVDLibraryDao dao = new DVDLibraryDaoImpl();
         DVDLibraryView view = new DVDLibraryView(
             new UserIOImpl(new Scanner(System.in))
         );
+        */
+                
+        var ctx = new AnnotationConfigApplicationContext();
+        ctx.scan("com.bm.dvdlibrary");
+        ctx.refresh();
         
-        DVDLibraryController controller = new DVDLibraryController(dao, view);
+        //DVDLibraryController controller = new DVDLibraryController(dao, view);
+        
+        var controller = ctx.getBean("dvdLibraryController", DVDLibraryController.class);
         
         controller.run();
     }

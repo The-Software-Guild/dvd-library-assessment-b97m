@@ -8,12 +8,15 @@
 package com.bm.dvdlibrary.ui;
 
 import java.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * The View component for this application
  * 
  * @author Benjamin Munoz
  */
+@Component
 public class DVDLibraryView {
     private UserIO userIO;
     
@@ -23,6 +26,7 @@ public class DVDLibraryView {
      * 
      * @param userIO 
      */
+    @Autowired
     public DVDLibraryView(UserIO userIO) {
         this.userIO = userIO;
     }

@@ -22,8 +22,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class DVDLibraryDaoImpl implements DVDLibraryDao {
     private Map<String, DVD> titleDVDMap;
     private static final String SRC_FILENAME = "dvds.txt";
